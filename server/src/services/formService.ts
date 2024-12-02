@@ -19,7 +19,9 @@ export const formService = async (
     } = formFromBody;
     if (
       !name ||
-      (!combatPreferences && !supportPreferences && !techPreferences)
+      !combatPreferences ||
+      !supportPreferences ||
+      !techPreferences
     ) {
       throw new Error("missing info!");
     }
