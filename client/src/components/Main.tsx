@@ -1,4 +1,3 @@
-import tank_image from "../assets/tank_image.png";
 import Form from "./Form";
 
 const Main = () => {
