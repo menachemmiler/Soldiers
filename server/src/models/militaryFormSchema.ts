@@ -1,5 +1,7 @@
 import mongoose, { Document, Schema } from "mongoose";
 
+
+//זרוע היבשה
 export interface CombatPreferences {
   golani: number;
   armor: number;
@@ -7,6 +9,7 @@ export interface CombatPreferences {
   searchAndRescue: number;
 }
 
+//גובניק
 export interface SupportPreferences {
   targetingNCO: number;
   nimrodiSergeant: number;
@@ -14,6 +17,7 @@ export interface SupportPreferences {
   sandwichFiller: number;
 }
 
+//תוכנית קודקוד
 export interface TechPreferences {
   fullstack: number;
   data: number;
@@ -136,7 +140,7 @@ const militaryFormSchema = new Schema<IMilitaryForm>(
     status: {
       type: String,
       enum: ["draft", "submitted", "processed"],
-      default: "draft",
+      default: "submitted",
     },
     version: {
       type: Number,
