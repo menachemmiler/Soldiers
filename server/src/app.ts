@@ -12,10 +12,8 @@ export const app = express();
 
 conectToMongo();
 
-
-
 app.use(express.json());
-app.use("/api/form", formController);
+app.use("/api", formController);
 
 app.get("/ping", (req: Request, res: Response) => {
   res.send("pong").status(200);
