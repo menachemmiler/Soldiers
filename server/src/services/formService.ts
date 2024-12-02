@@ -5,6 +5,7 @@ import militaryFormSchema, {
 export const formService = async (
   formFromBody: IMilitaryForm
 ): Promise<any> => {
+  console.log({ formFromBody });
   try {
     const {
       name,
