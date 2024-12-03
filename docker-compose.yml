@@ -1,0 +1,46 @@
+services:
+  client:
+    # build: 
+    #   context: ./client
+    #   dockerfile: Dockerfile
+    image: menachem5050/soldiers-client-img
+    container_name: client-con-soldiers
+    ports:
+      - "7070:80"
+    networks:
+      - form-net
+    depends_on:
+      - server
+  server:
+    # build: 
+    #   context: ./server
+    #   dockerfile: Dockerfile
+    image: menachem5050/soldiers-server-img
+    container_name: server-con-soldiers
+    ports:
+      - "5555:2800"
+    networks:
+      - form-net
+    depends_on:
+      - form-db
+    environment:
+      - PORT=2800
+      - CONNECTION_STRING=mongodb://form-db:27017/form_db
+      - SECRET_KEY=wybcfgwuwgkegfwui
+  form-db:
+    image: mongo
+    container_name: form-mongo-db
+    ports:
+      - "3032:27017"
+    networks:
+      - form-net
+    restart:
+      always
+    volumes:
+      - form-volume:/data/db
+networks:
+  form-net:
+    driver: bridge
+
+volumes:
+  form-volume:

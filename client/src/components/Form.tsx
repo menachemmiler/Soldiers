@@ -1,6 +1,5 @@
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 import Preference from "./Preference";
-import { IMilitaryForm } from "../../types/formTypes";
 
 const Form = () => {
   const CombatRef = useRef<Record<string, number>>({});
@@ -37,7 +36,7 @@ const Form = () => {
       })
     );
     try {
-      const res = await fetch("http://localhost:8200/api/form", {
+      const res = await fetch("http://localhost:5555/api/form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

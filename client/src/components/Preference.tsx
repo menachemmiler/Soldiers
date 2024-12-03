@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 interface Props {
   title: string;
   options: string[];
-  //   optionRef: React.MutableRefObject<Record<string, number>>;
-  optionRef: any;
+    optionRef: React.MutableRefObject<Record<string, number>>;
 }
 
 const Preference = ({ title, options, optionRef }: Props) => {
