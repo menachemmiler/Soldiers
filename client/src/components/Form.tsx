@@ -9,8 +9,6 @@ const Form = () => {
   const nameRef = useRef<string>("");
   const noteRef = useRef<string>("");
 
-
-
   const CombatOtions: string[] = ["גולני", "שריון", "תותחנים", "חילוץ והצלה"];
   const SupportOtions: string[] = [
     `מש"ק ממטרות`,
@@ -28,17 +26,28 @@ const Form = () => {
   const handleSendForm = async () => {
     console.log({ CombatRef });
     if (!nameRef.current || !CombatRef || !SupportRef || !TechRef) return;
-    console.log(50)
+    console.log(50);
+    console.log(
+      JSON.stringify({
+        name: nameRef.current,
+        personalNote: noteRef.current,
+        combatPreferences: CombatRef.current,
+        supportPreferences: SupportRef.current,
+        techPreferences: TechRef.current,
+      })
+    );
     try {
       const res = await fetch("http://localhost:8200/api/form", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           name: nameRef.current,
           personalNote: noteRef.current,
           combatPreferences: CombatRef.current,
           supportPreferences: SupportRef.current,
           techPreferences: TechRef.current,
-          status: "draft",
         }),
       });
       if (res.status != 201) throw new Error("cont create new form!");

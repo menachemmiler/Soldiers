@@ -8,7 +8,6 @@ export const form = async (
 ) => {
   try {
     const result = await formService(req.body);
-    res.header("Access-Control-Allow-Origin", "*");
     res.status(201).json(result);
   } catch (error) {
     res.status(400).json((error as Error).message);
