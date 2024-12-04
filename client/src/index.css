@@ -150,7 +150,8 @@ label {
   margin-bottom: 0.75rem;
 }
 
-.guidelines, .preference{
+.guidelines,
+.preference {
   background-color: #fdfdfa;
 }
 
@@ -195,27 +196,58 @@ label {
   border-radius: 6px;
 }
 
-.preference-radio{
-  width: 100%;
-  height: 100%;
-  background-color: rgb(190, 174, 174);
+.preference-radio {
+  /* background-color: rgb(223, 212, 234); */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-
-  /* margin-bottom: 3rem;
-  background-color: #e1d7980d;
-  border-radius: 8px;
-  padding: 1.5rem;
-  border: 1px solid rgba(103, 86, 69, .1); */
-}
-
-.options{
-  width: 30%;
-}
-
-.preference-radio > div{
-  background-color: rebeccapurple;
   width: 100%;
-  height: 75px;
+  height: 80%;
+  justify-content: space-evenly;
+}
+
+.option {
+  /* background-color: rgb(233, 75, 75); */
+  display: flex;
+  height: 30%;
+  width: 100%;
+}
+
+.optionnumbers {
+  width: 80%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.optionname {
+  width: 20%;
+  height: 100%;
+  /* background-color: rgb(98, 74, 174); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.optionnumbers > .square-radio {
+  width: 20px; /* רוחב */
+  height: 20px; /* גובה */
+  background-color: #ccc; /* צבע רקע */
+  border: 2px solid #333; /* גבול */
+  border-radius: 0; /* ביטול מעוגלות */
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* מצב של בחירה */
+input[type="radio"]:checked + .square-radio {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+/* מצב של ריחוף */
+.square-radio:hover {
+  background-color: #ddd;
 }

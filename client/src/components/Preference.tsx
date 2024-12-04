@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   title: string;
   options: string[];
-    optionRef: React.MutableRefObject<Record<string, number>>;
+  optionRef: React.MutableRefObject<Record<string, number>>;
 }
 
 const Preference = ({ title, options, optionRef }: Props) => {
@@ -31,11 +31,13 @@ const Preference = ({ title, options, optionRef }: Props) => {
 
       <div className="preference-radio">
         {options.map((option) => (
-          <div key={option}>
-            <label htmlFor={option}>{option}</label>
-            <div className="options">
+          <div className="option" key={option}>
+            <div className="optionname">
+              <label htmlFor={option}>{option}</label>
+            </div>
+            <div className="optionnumbers">
               {[1, 2, 3, 4, 5].map((value) => (
-                <input
+                <input className="square-radio"
                   key={`${option}-${value}`}
                   type="radio"
                   id={`${option}-${value}`}

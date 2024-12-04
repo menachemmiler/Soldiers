@@ -36,7 +36,7 @@ const Form = () => {
       })
     );
     try {
-      const res = await fetch("http://localhost:5555/api/form", {
+      const res = await fetch("http://localhost:2800/api/form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
