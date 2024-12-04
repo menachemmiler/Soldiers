@@ -3,7 +3,7 @@ services:
     # build: 
     #   context: ./client
     #   dockerfile: Dockerfile
-    image: menachem5050/soldiers-client-img
+    image: menachem5050/soldiers-client-img2
     container_name: client-con-soldiers
     ports:
       - "7070:80"
@@ -15,7 +15,7 @@ services:
     # build: 
     #   context: ./server
     #   dockerfile: Dockerfile
-    image: menachem5050/soldiers-server-img
+    image: menachem5050/soldiers-server-img2
     container_name: server-con-soldiers
     ports:
       - "5555:2800"
